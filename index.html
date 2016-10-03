@@ -6,32 +6,31 @@
 </head>
 <body>
 
-<div class="container">
-	<h1>Quiz App</h1>
-	
-	<div class="starter">
-		<h2>Instructions</h2>
-		<p>Click Start to Take the Quiz</p>
-		<button class="start">Start</button>
-	</div>
-	<div class="quiz hidden">
-		<h3>Question:</h3>
-		<p>question 'text</p>
-		<div class="answer">this is a sample answer</div>
-		<div class="answer">this is another sample answer</div>
-		<div class="footer">
-			<p>Question <span id="current_question"></span> out of 5. <span class="score"></span> correct, <span id="incorrect"></span> incorrect</p>
 
-			<button class="next">Next</button>
+	<div class="container">
+		<h1>Quiz App</h1>
+		
+		<div class="starter">
+			<h2>Instructions</h2>
+			<p>Click Start to Take the Quiz</p>
+			<div class="button start"><img src ="http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif"><div>Start</div></div>
+		</div>
+		<div class=" quiz hidden">
+			<p>question 'text</p>
+			<div class="answer_container"></div>
+			<div class="footer">
+				<p>Question <span id="current_question"></span> out of 5<br><span class="score"></span> correct, <span id="incorrect"></span> incorrect</p>
+
+				<div class="button next"><img src ="http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif">Next</div>
+			</div>
+		</div>
+		<div class="finish hidden">
+			<h3>You've Finished!</h3>
+			<p>You scored <span class="score"></span> out of 5 points.</p>
+			<div class="button start"><img src ="http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif">Retake Quiz</div>
 		</div>
 	</div>
-	<div class="finish hidden">
-		<h3>You've Finished!</h3>
-		<p>You scored <span class="score"></span> out of 5 points.</p>
-		<button class="start">Retake Quiz</button>
-	</div>
-	
-</div>
+
 
 
 

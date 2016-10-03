@@ -62,8 +62,8 @@ function renderQuestion(state) {
 		//writing HTML text
 		return '<div class="answer">' + answer + '</div>';
 	});
-	$('.quiz .answer').remove();
-	$('.quiz>p').append(answersHtml);
+	$('.answer_container').children().remove();
+	$('.answer_container').append(answersHtml);
 }
 
 function shuffle(array) {
