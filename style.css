@@ -1,0 +1,21 @@
+.container {
+	width: 100%;
+	text-align: center;
+}
+
+.answer {
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid black;
+	text-align: left;
+	padding: 10px;
+}
+
+.answer:hover {
+	background-color: #008080;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}

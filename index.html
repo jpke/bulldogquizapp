@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz App Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+	<h1>Quiz App</h1>
+	
+	<div class="starter">
+		<h2>Instructions</h2>
+		<p>Click Start to Take the Quiz</p>
+		<button class="start">Start</button>
+	</div>
+	<div class="quiz hidden">
+		<h3>Question:</h3>
+		<p>question 'text</p>
+		<div class="answer">this is a sample answer</div>
+		<div class="answer">this is another sample answer</div>
+		<div class="footer">
+			<p>Question <span id="current_question"></span> out of 5. <span class="score"></span> correct, <span id="incorrect"></span> incorrect</p>
+
+			<button class="next">Next</button>
+		</div>
+	</div>
+	<div class="finish hidden">
+		<h3>You've Finished!</h3>
+		<p>You scored <span class="score"></span> out of 5 points.</p>
+		<button class="start">Retake Quiz</button>
+	</div>
+	
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
