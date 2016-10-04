@@ -20,12 +20,28 @@ var state = {
 		5: {
 			question: "Which pet should be named after the Greek god Jupiter?",
 			answers: ['Bulldog', 'Platypus', 'Dire Canary', 'Pet Rock']
+		},
+		6: {
+			question: "Who's the boss?",
+			answers: ['Bulldog', 'Human', 'President Obama', 'Queen Elizabeth']
+		},
+		7: {
+			question: "Which is the most popular dog breed in Los Angeles?",
+			answers: ['Bulldog', 'Shitzu', 'Yorkie', 'Labradoodle']
+		},
+		8: {
+			question: "Who's the most stubborn of all?",
+			answers: ['Bulldog', 'The Grinch', 'Ebenezer Scrooge', 'Pet Rock']
+		},
+		9: {
+			question: "Who you gonna call?",
+			answers: ['Bulldog', 'Ghostbuster', 'The Police', 'Wonder Woman']
+		},
+		10: {
+			question: "Which animal was bred to fight bulls dating back to the 1200s in England?",
+			answers: ['Bulldog', 'Platypus', 'Potbelly Pig', 'Star Nosed Mole']
 		}
 	},
-	score: 0,
-	incorrect: 0,
-	currentQuestion: 1,
-	firstTry: true
 }
 
 
@@ -48,6 +64,7 @@ function resetState(state) {
 	state.incorrect = 0;
 	state.currentQuestion = 1;
 	state.firstTry = true;
+	state.unselectedNextFirstClick = true;
 }
 
 
@@ -99,6 +116,7 @@ $('.start').on('click', function(event) {
 	resetState(state);
 	renderQuestion(state);
 	renderProgress(state);
+	$('.total-questions').text(Object.keys(state.questions).length);
 });
 
 // click event for correct or incorrect answer
@@ -108,6 +126,7 @@ $('.quiz').on('click', '.answer', function(event) {
 
 	if(state.firstTry == true){
 		var selected = $(this).text();
+		$('.response').remove();
 		if (evaluateResults(selected, state)) {
 			$('.quiz').append('<h3 class="response">Correct! Select next to continue.</h3>')
 		} else {
@@ -123,6 +142,14 @@ $('.quiz').on('click', '.answer', function(event) {
 // next button clicked
 $('.footer').on('click', '.next', function(event){
 	event.preventDefault();
+	if(state.firstTry) {
+		if(state.unselectedNextFirstClick){
+			state.unselectedNextFirstClick = false;
+			return $('.quiz').append('<h3 class="response">Quit drooling on yourself and select a response to continue!</h3>');
+		} else {
+			return 
+		}
+	}
 	if(state.currentQuestion == Object.keys(state.questions).length) {
 		$('.quiz').addClass('hidden');
 		$('.finish').removeClass('hidden');
@@ -130,6 +157,7 @@ $('.footer').on('click', '.next', function(event){
 		state.currentQuestion++;
 		$('.response').remove();
 		state.firstTry = true;
+		state.unselectedNextFirstClick = true;
 		renderQuestion(state);
 		renderProgress(state);
 	}

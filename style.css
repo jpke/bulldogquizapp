@@ -1,18 +1,29 @@
 body {
 	background: url("http://dennelllucero.com/img/IMG_9161_crop.jpg") no-repeat center center fixed; 
-  text-align: center;
-  font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
-  font-weight: bold;
+  	text-align: center;
+  	font-family: "Trebuchet MS", Helvetica, sans-serif;
+  	font-weight: bold;
+}
+
+h1 {
+	font-family: "Verdana", sans-serif;
+	padding-top: 20px;
+	margin-bottom: -20px;
+}
+
+.container>h2 {
+	font-family: "Verdana", sans-serif;
+	padding-top: 10px;
 }
 
 .button {
 	border: none;
-  background: url("http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif") no-repeat center center;
-  height: 50px;
-  width: 80px;
-  background-size: contain;
-  border-radius: 16px;
-  margin: 0 auto;
+	background: url("http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif") no-repeat center center;
+	height: 50px;
+	width: 80px;
+	background-size: contain;
+	border-radius: 16px;
+	margin: 0 auto;
 
 }
 
@@ -40,7 +51,7 @@ body {
 }
 
 .answer:hover {
-	background-color: #f0fff0;
+	background-color: #7fffd4;
 	cursor: pointer;
 	border-radius: 5px;
 }
@@ -55,6 +66,10 @@ body {
 
 .footer>p {
 	font-size: 18px;
+}
+
+.footer>p:first-child {
+	margin-bottom: -10px;
 }
 
 .response {
