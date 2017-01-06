@@ -2,7 +2,7 @@
 
 A tongue-in-cheek quiz of bulldog facts
 
-![Bulldog Quiz App Screenshot](./bulldogquizapp.jpg =250)
+![Bulldog Quiz App Screenshot](./bulldogquizapp.jpg =250x250)
 
 ## Technologies
 
