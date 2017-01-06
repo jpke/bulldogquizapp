@@ -2,7 +2,7 @@
 
 A tongue-in-cheek quiz of bulldog facts
 
-![Alt text](https://jpke.github.io/bulldogquizapp/)
+![Alt text](./bulldogquizapp.jpg)
 
 ## Technologies
 
