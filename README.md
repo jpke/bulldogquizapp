@@ -24,7 +24,7 @@ A tongue-in-cheek quiz of bulldog facts
 
 ## Use
 
-* Load this app from on any browser.
+* Load this app from https://jpke.github.io/bulldogquizapp/ on any browser.
 
 
 ##### Contributers
