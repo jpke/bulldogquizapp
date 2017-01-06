@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Quiz App Project</title>
+	<link rel="shortcut icon" href="./dog-bone.png">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 
 	<div class="container">
+		<!-- header -->
 		<h1>Bulldogs Rule,<br/> Humans Drool</h1>
 		<h2>Quiz App</h2>
-		
+
+		<!-- starter page -->
 		<div class="starter">
 			<h2>Instructions</h2>
 			<p>Click Start to Take the Quiz</p>
 			<div class="button start"><p>Start</p></div>
 		</div>
+
+		<!-- quiz page -->
 		<div class=" quiz hidden">
 			<p>question 'text</p>
 			<div class="answer_container"></div>
 			<div class="footer">
 				<p>Question <span id="current_question"></span> out of <span class="total-questions"></span></p>
 				<p><span class="score"></span> correct, <span id="incorrect"></span> incorrect</p>
-
 				<div class="button next"><p>Next</p></div>
 			</div>
 		</div>
+
+		<!-- finish page -->
 		<div class="finish hidden">
 			<h3>You've Finished!</h3>
 			<p>You scored <span class="score"></span> out of <span class="total-questions"></span> points.</p>
@@ -34,9 +42,11 @@
 	</div>
 
 
-
-
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<!-- jquery scripts -->
+<script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

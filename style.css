@@ -1,5 +1,5 @@
 body {
-	background: url("http://dennelllucero.com/img/IMG_9161_crop.jpg") no-repeat center center fixed; 
+	background: url("http://dennelllucero.com/img/IMG_9161_crop.jpg") no-repeat center center fixed;
   	background-position: 70% 60%;
   	text-align: center;
   	font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -19,7 +19,7 @@ h1 {
 
 .button {
 	border: none;
-	background: url("http://clipartix.com/wp-content/uploads/2016/06/Dog-bone-clipart-free-clipart-images.gif") no-repeat center center;
+	background: url("./dog-bone.png") no-repeat center center;
 	height: 50px;
 	width: 80px;
 	background-size: contain;
@@ -36,7 +36,7 @@ h1 {
 	margin: 0 auto;
 	opacity: 1;
 	background:rgba(255,255,255, 0.35);
-	width: 40%;
+	max-width: 600px;
 	border-radius: 10px;
 }
 
@@ -77,6 +77,3 @@ h1 {
 	margin-top: 0;
 	padding-bottom: 15px;
 }
-
-
-

@@ -45,11 +45,13 @@ var state = {
 }
 
 
-
-//state modifying functions & computing functions
+// functions to modify state and render into DOM
+// check user submitted answer against correct answer
 function evaluateResults(selected, state) {
 	var currentQuestion = state.currentQuestion;
 	var correctAnswer = state.questions[currentQuestion].answers[0];
+
+	// update score accordingly
 	if (selected === correctAnswer) {
 		state.score++;
 		return true;
@@ -59,6 +61,7 @@ function evaluateResults(selected, state) {
 	}
 }
 
+// create or reset state variables tracking state of game
 function resetState(state) {
 	state.score = 0;
 	state.incorrect = 0;
@@ -67,22 +70,18 @@ function resetState(state) {
 	state.unselectedNextFirstClick = true;
 }
 
-
-
-//function that render state of DOM
+// update DOM with current game state with answers displayed in random order
 function renderQuestion(state) {
 	var currentQuestion = state.currentQuestion;
 	var randomizeAnswers = shuffle(state.questions[currentQuestion].answers);
-	//'.quiz'>p : only direct p of quiz
 	$('.quiz>p').text(state.questions[currentQuestion].question);
 	var answersHtml = randomizeAnswers.map(function(answer) {
-		//writing HTML text
 		return '<div class="answer">' + answer + '</div>';
 	});
-	$('.answer_container').children().remove();
-	$('.answer_container').append(answersHtml);
+	$('.answer_container').html(answersHtml);
 }
 
+// shuffles question order
 function shuffle(array) {
 	var a = array.slice();
     var j, x, i;
@@ -95,6 +94,7 @@ function shuffle(array) {
     return a;
 }
 
+// update DOM fields with current state data
 function renderProgress(state) {
 	$('#current_question').text(state.currentQuestion);
 	$('.score').text(state.score);
@@ -102,11 +102,8 @@ function renderProgress(state) {
 }
 
 
-
-
 //event listeners
-
-// once start button clicked, quiz pops up
+// clicking start button displays quiz with game state reset
 $('.start').on('click', function(event) {
 	event.preventDefault();
 	$('.starter').addClass('hidden');
@@ -119,11 +116,12 @@ $('.start').on('click', function(event) {
 	$('.total-questions').text(Object.keys(state.questions).length);
 });
 
-// click event for correct or incorrect answer
-// adds to 
+// clicking an answer causes selected answer to be checked against correct answer, with game state updated accordingly
+// only one answer may be selected per question
 $('.quiz').on('click', '.answer', function(event) {
 	event.preventDefault();
 
+	// only one try allowed per question
 	if(state.firstTry == true){
 		var selected = $(this).text();
 		$('.response').remove();
@@ -139,21 +137,28 @@ $('.quiz').on('click', '.answer', function(event) {
 	}
 });
 
-// next button clicked
+// clicking next button will move game to the next question, if there is one
+// user must have selected an answer
+// if no questions remain, finish page is displayed
 $('.footer').on('click', '.next', function(event){
 	event.preventDefault();
+
+	// check that user has selected an answer before continuing game
 	if(state.firstTry) {
+		// check that this is the first time user has clicked next without selecting an answer
 		if(state.unselectedNextFirstClick){
 			state.unselectedNextFirstClick = false;
 			return $('.quiz').append('<h3 class="response">Quit drooling on yourself and select a response to continue!</h3>');
-		} else {
-			return 
 		}
 	}
+
+	// check for end of quiz, displaying finish page if game complete
 	if(state.currentQuestion == Object.keys(state.questions).length) {
 		$('.quiz').addClass('hidden');
 		$('.finish').removeClass('hidden');
 	} else {
+
+		// move on to next question, reseting tracking for whether user has selected an answer
 		state.currentQuestion++;
 		$('.response').remove();
 		state.firstTry = true;
@@ -162,9 +167,3 @@ $('.footer').on('click', '.next', function(event){
 		renderProgress(state);
 	}
 });
-
-
-
-
-
-
