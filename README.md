@@ -3,6 +3,7 @@
 A tongue-in-cheek quiz of bulldog facts
 
 ![Bulldog Quiz App Screenshot](./bulldogquizapp.jpg =250x250)
+<img src="./bulldogquizapp.jpg" width="200px" height="200px" />
 
 ## Technologies
 
