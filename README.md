@@ -1,6 +1,7 @@
 # Bulldog Quiz App
 
 A tongue-in-cheek quiz of bulldog facts
+
 <img src="./bulldogquizapp.jpg" width="400px" />
 
 ## Technologies
